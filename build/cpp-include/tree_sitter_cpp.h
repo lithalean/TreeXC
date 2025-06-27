@@ -5,7 +5,9 @@
 extern "C" {
 #endif
 
-const void *tree_sitter_cpp(void);
+#include "tree_sitter/api.h"
+
+const TSLanguage *tree_sitter_cpp(void);
 
 #ifdef __cplusplus
 }

@@ -54,7 +54,7 @@ else
 fi
 rm -f *.o
 
-# Create header file for Swift grammar
+# Create proper header file for Swift grammar
 mkdir -p "$ROOT_DIR/build/swift-include"
 cat > "$ROOT_DIR/build/swift-include/tree_sitter_swift.h" << 'EOF'
 #ifndef TREE_SITTER_SWIFT_H_
@@ -64,7 +64,9 @@ cat > "$ROOT_DIR/build/swift-include/tree_sitter_swift.h" << 'EOF'
 extern "C" {
 #endif
 
-const void *tree_sitter_swift(void);
+#include "tree_sitter/api.h"
+
+const TSLanguage *tree_sitter_swift(void);
 
 #ifdef __cplusplus
 }

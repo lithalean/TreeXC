@@ -5,7 +5,9 @@
 extern "C" {
 #endif
 
-const void *tree_sitter_swift(void);
+#include "tree_sitter/api.h"
+
+const TSLanguage *tree_sitter_swift(void);
 
 #ifdef __cplusplus
 }

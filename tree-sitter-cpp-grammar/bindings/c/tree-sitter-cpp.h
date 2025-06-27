@@ -1,14 +1,16 @@
 #ifndef TREE_SITTER_CPP_H_
 #define TREE_SITTER_CPP_H_
 
+typedef struct TSLanguage TSLanguage;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-const void *tree_sitter_cpp(void);
+const TSLanguage *tree_sitter_cpp(void);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+#endif // TREE_SITTER_CPP_H_
